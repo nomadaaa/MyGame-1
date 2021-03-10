@@ -1,5 +1,6 @@
 import pygame
-# from pygame.locals import *
+from pygame import *
+# from pygame import K_RETURN, K_S, K_W, K_UP, K_DOWN
 
 pygame.init()
 width, height = 640, 480
@@ -44,22 +45,31 @@ while(running):
 
 		if event.type == pygame.KEYDOWN:
 			if event.key == K_w:
-				keys['top'] == True
+				keys['top'] = True
 			elif event.key == K_d:
-				keys['right'] == True
+				keys['right'] = True
 			elif event.key == K_s:
-				keys['bottom'] == True
-			elif even.key == K_a:
-				keys['left'] == True
-		elif event.type == pygame.KEYUP:
+				keys['bottom'] = True
+			elif event.key == K_a:
+				keys['left'] = True
+		if event.type == pygame.KEYUP:
 			if event.key == K_w:
-				keys['top'] == False
+				keys['top'] = False
 			elif event.key == K_d:
-				keys['right'] == False
+				keys['right'] = False
 			elif event.key == K_s:
-				keys['bottom'] == False
-			elif even.key == K_a:
-				keys['left'] == False
+				keys['bottom'] = False
+			elif event.key == K_a:
+				keys['left'] = False
+	
+	if keys['top']:
+		playerpos[1] -= 5
+	elif keys['bottom']:
+		playerpos[1] += 5
+	if keys['right']:
+		playerpos[0] += 5
+	elif keys['left']:
+		playerpos[0] -= 5
 		
 
 
