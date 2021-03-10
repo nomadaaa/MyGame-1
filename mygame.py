@@ -5,8 +5,15 @@ pygame.init()
 width, height = 640, 480
 screen = pygame.display.set_mode((width, height))
 
+keys = {
+	'top': False,
+	'right': False,
+	'bottom': False,
+	'left':False
+}
+
 running = True
-playerpos = [100, 100] 
+playerpos = [300, 100] 
 
 #use resource
 player = pygame.image.load("./resources/images/dude.png")
@@ -34,6 +41,25 @@ while(running):
 		if event.type == pygame.QUIT:
 			pygame.quit()
 			exit(0)
+
+		if event.type == pygame.KEYDOWN:
+			if event.key == K_w:
+				keys['top'] == True
+			elif event.key == K_d:
+				keys['right'] == True
+			elif event.key == K_s:
+				keys['bottom'] == True
+			elif even.key == K_a:
+				keys['left'] == True
+		elif event.type == pygame.KEYUP:
+			if event.key == K_w:
+				keys['top'] == False
+			elif event.key == K_d:
+				keys['right'] == False
+			elif event.key == K_s:
+				keys['bottom'] == False
+			elif even.key == K_a:
+				keys['left'] == False
 		
 
 
