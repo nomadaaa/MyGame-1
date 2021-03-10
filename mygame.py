@@ -1,5 +1,6 @@
 import pygame
 from pygame import *
+import math
 # from pygame import K_RETURN, K_S, K_W, K_UP, K_DOWN
 
 pygame.init()
@@ -35,7 +36,11 @@ while(running):
 	screen.blit(castle, (0, 240))
 	screen.blit(castle, (0, 345))
 
-	screen.blit(player, playerpos)
+	mouse_position = pygame.mouse.get_pos()
+	angel = math.atan2(mouse_position[1] - (playerpos[1]+32), mouse_position[0] - (playerpos[0]+26))
+	player_rotation = pygame.transform.rotate(player, 360 - angel * 57.29)
+	new_playerpos = (playerpos[0] - player_rotation.get_rect().width / 2, playerpos[1] - player_rotation.get_rect().height / 2)
+	screen.blit(player_rotation, new_playerpos)
 
 	pygame.display.flip()
 	for event in pygame.event.get():
