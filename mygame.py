@@ -20,7 +20,7 @@ while(running):
 	for x in range(int(width/grass.get_width()+1)):
 		for y in range(int(height/grass.get_height()+1)):
 			screen.blit(grass, (x*100, y*100))
-			
+
 	#? Draw castle
 	screen.blit(castle, (0,30))
 	screen.blit(castle, (0, 135))
@@ -28,9 +28,12 @@ while(running):
 	screen.blit(castle, (0, 345))
 
 	screen.blit(player, playerpos)
+
 	pygame.display.flip()
 	for event in pygame.event.get():
-		pygame.quit()
-		exit(0)
+		if event.type == pygame.QUIT:
+			pygame.quit()
+			exit(0)
+		
 
 
