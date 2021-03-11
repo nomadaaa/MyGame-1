@@ -48,6 +48,20 @@ while(running):
 	new_playerpos = (playerpos[0] - player_rotation.get_rect().width / 2, playerpos[1] - player_rotation.get_rect().height / 2)
 	screen.blit(player_rotation, new_playerpos)
 
+	for bullet in arrows:
+		arrow_index = 0
+		velx = math.cos(bullet[0])*10
+		vely = math.sin(bullet[0])*10
+		bullet[1] += velx
+		bullet[2] += vely
+		if bullet[1] < -64 or bullet[1] > width or bullet[2] < -64 or bullet[2] > height:
+			arrows.pop(arrow_index)
+		arrow_index += 1
+
+		for projectile in arrows:
+			new_arrow = pygame.transform.rotate(arrow, 360-projectile[0] * 57.29)
+			screen.blit(new_arrow, (projectile[1], projectile[2]))
+
 	pygame.display.flip()
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
