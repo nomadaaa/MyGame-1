@@ -19,6 +19,8 @@ running = True
 playerpos = [300, 100] 
 
 score = 0
+health_point = 194
+countdown_timer = 90000
 arrows = []
 
 enemy_timer = 100
@@ -30,6 +32,8 @@ grass     = pygame.image.load("./resources/images/grass.png")
 castle    = pygame.image.load("./resources/images/castle.png")
 arrow     = pygame.image.load("./resources/images/bullet.png")
 enemy_img = pygame.image.load("./resources/images/badguy.png")
+healthbar = pygame.image.load("./resources/images/healthbar.png")
+health = pygame.image.load("./resources/images/health.png")
 
 while(running):
 	screen.fill(0)
