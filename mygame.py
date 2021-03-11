@@ -57,19 +57,19 @@ while(running):
 		if bullet[1] < -64 or bullet[1] > width or bullet[2] < -64 or bullet[2] > height:
 			arrows.pop(arrow_index)
 		arrow_index += 1
-
 		for projectile in arrows:
 			new_arrow = pygame.transform.rotate(arrow, 360-projectile[0] * 57.29)
 			screen.blit(new_arrow, (projectile[1], projectile[2]))
 
 	pygame.display.flip()
+
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			pygame.quit()
 			exit(0)
 
 		if event.type == pygame.MOUSEBUTTONDOWN:
-			arrows.append([angel, new_playerpos[0]+32], new_playerpos[1]+32)
+			arrows.append([angel, new_playerpos[0]+32, new_playerpos[1]+32])
 
 		if event.type == pygame.KEYDOWN:
 			if event.key == K_w:
