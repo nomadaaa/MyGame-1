@@ -45,12 +45,14 @@ while(running):
 	screen.blit(castle, (0, 240))
 	screen.blit(castle, (0, 345))
 
+	#! mouse
 	mouse_position = pygame.mouse.get_pos()
 	angel = math.atan2(mouse_position[1] - (playerpos[1]+32), mouse_position[0] - (playerpos[0]+26))
 	player_rotation = pygame.transform.rotate(player, 360 - angel * 57.29)
 	new_playerpos = (playerpos[0] - player_rotation.get_rect().width / 2, playerpos[1] - player_rotation.get_rect().height / 2)
 	screen.blit(player_rotation, new_playerpos)
 
+	#! add bullet
 	for bullet in arrows:
 		arrow_index = 0
 		velx = math.cos(bullet[0])*10
@@ -64,6 +66,7 @@ while(running):
 			new_arrow = pygame.transform.rotate(arrow, 360-projectile[0] * 57.29)
 			screen.blit(new_arrow, (projectile[1], projectile[2]))
 	
+	#! enemy timer
 	enemy_timer -= 1
 	if enemy_timer == 0:
 		enemies.append([width, randint(50, height-32)])
@@ -74,10 +77,36 @@ while(running):
 		enemy[0] -= 5
 		if enemy[0] < -64:
 			enemies.pop(index)
+
+	enemy_rect = pygame.Rect(enemy_img.get_rect())
+	enemy_rect.top = enemy[1]
+	enemy_rect.left = enemy[0]
+
+	#! benturan musuh dengan markas kelinci
+	if enemy_rect.left < 64:
+		enemies.pop(index)
+		print("Oh tidak, kita diserang!!!")
+
+	index_arrow = 0
+	for bullet in arrows:
+		bullet_rect = pygame.Rect(arrow.get_rect())
+		bullet_rect.left = bullet[1]
+		bullet_rect.top = bullet[2]
+
+		if enemy_rect.colliderect(bullet_rect):
+			score += 1
+			enemies.pop(index)
+			arrows.pop(index_arrow)
+			print("Boom mati kau njengg")
+			print("Score: {}".format(score))
+		index_arrow += 1
+	index += 1
 	
+	#! gambar musuh ke layar
 	for enemy in enemies:
 		screen.blit(enemy_img, enemy)
 
+	#! game quit
 	pygame.display.flip()
 
 	for event in pygame.event.get():
@@ -88,6 +117,7 @@ while(running):
 		if event.type == pygame.MOUSEBUTTONDOWN:
 			arrows.append([angel, new_playerpos[0]+32, new_playerpos[1]+32])
 
+		#! keydown keyboard
 		if event.type == pygame.KEYDOWN:
 			if event.key == K_w:
 				keys['top'] = True
