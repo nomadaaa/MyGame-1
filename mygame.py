@@ -17,10 +17,16 @@ keys = {
 running = True
 playerpos = [300, 100] 
 
+score = 0
+arrows = []
+
+
+
 #use resource
 player = pygame.image.load("./resources/images/dude.png")
 grass = pygame.image.load("./resources/images/grass.png")
 castle = pygame.image.load("./resources/images/castle.png")
+arrow = pygame.image.load("./resources/images/bullet.png")
 
 while(running):
 	screen.fill(0)
@@ -47,6 +53,9 @@ while(running):
 		if event.type == pygame.QUIT:
 			pygame.quit()
 			exit(0)
+
+		if event.type == pygame.MOUSEBUTTONDOWN:
+			arrows.append([angel, new_playerpos[0]+32], new_playerpos[1]+32)
 
 		if event.type == pygame.KEYDOWN:
 			if event.key == K_w:
