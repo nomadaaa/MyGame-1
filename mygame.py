@@ -89,6 +89,7 @@ while(running):
 	#! benturan musuh dengan markas kelinci
 	if enemy_rect.left < 64:
 		enemies.pop(index)
+		health_point -= randint(5,20)
 		print("Oh tidak, kita diserang!!!")
 
 	index_arrow = 0
@@ -109,6 +110,22 @@ while(running):
 	#! gambar musuh ke layar
 	for enemy in enemies:
 		screen.blit(enemy_img, enemy)
+
+	#!membuat darah bar
+	screen.blit(healthbar, (5,5))
+	for hp in range(health_point):
+		screen.blit(health, (hp+8, 8))
+
+	#! membuat timer
+	font = pygame.font.Font(None, 24)
+	minutes = int((countdown_timer-pygame.time.get_ticks())/60000)
+	seconds = int((countdown_timer-pygame.time.get_ticks())/1000%60)
+	time_text = "{:02}:{:02}".format(minutes, seconds)
+	clock = font.render(time_text, True, (255,255,255))
+	textRect = clock.get_rect()
+	textRect.topright = [635, 5]
+	screen.blit(clock, textRect)
+
 
 	#! game quit
 	pygame.display.flip()
