@@ -63,6 +63,20 @@ while(running):
 		for projectile in arrows:
 			new_arrow = pygame.transform.rotate(arrow, 360-projectile[0] * 57.29)
 			screen.blit(new_arrow, (projectile[1], projectile[2]))
+	
+	enemy_timer -= 1
+	if enemy_timer == 0:
+		enemies.append([width, randint(50, height-32)])
+		enemy_timer = randint(1, 100)
+
+	index = 0
+	for enemy in enemies:
+		enemy[0] -= 5
+		if enemy[0] < -64:
+			enemies.pop(index)
+	
+	for enemy in enemies:
+		screen.blit(enemy_img, enemy)
 
 	pygame.display.flip()
 
