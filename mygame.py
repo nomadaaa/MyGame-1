@@ -1,6 +1,7 @@
 import pygame
 from pygame import *
 import math
+from random import randint
 # from pygame import K_RETURN, K_S, K_W, K_UP, K_DOWN
 
 pygame.init()
@@ -20,13 +21,15 @@ playerpos = [300, 100]
 score = 0
 arrows = []
 
-
+enemy_timer = 100
+enemies = [[width, 100]]
 
 #use resource
-player = pygame.image.load("./resources/images/dude.png")
-grass = pygame.image.load("./resources/images/grass.png")
-castle = pygame.image.load("./resources/images/castle.png")
-arrow = pygame.image.load("./resources/images/bullet.png")
+player    = pygame.image.load("./resources/images/dude.png")
+grass     = pygame.image.load("./resources/images/grass.png")
+castle    = pygame.image.load("./resources/images/castle.png")
+arrow     = pygame.image.load("./resources/images/bullet.png")
+enemy_img = pygame.image.load("./resources/images/badguy.png")
 
 while(running):
 	screen.fill(0)
