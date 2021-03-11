@@ -17,7 +17,9 @@ keys = {
 
 running = True
 playerpos = [300, 100] 
-
+exitcode = 0
+EXIT_CODE_GAME_OVER = 0
+EXIT_CODE_WIN = 1
 score = 0
 health_point = 194
 countdown_timer = 90000
