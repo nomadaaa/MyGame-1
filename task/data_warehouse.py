@@ -71,6 +71,10 @@ def perulanganFor():
 	# jumlah_tagihan = len(tagihan)
 	totalTagihan = 0
 	for i in test_tagihan:
+		# break section
+		if i < 0:
+			print('Data ada yg 0')
+			break
 		totalTagihan += i
 	print('Menggunakan For Loop', totalTagihan)
 
