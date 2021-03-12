@@ -55,7 +55,7 @@ def perulanganWhile():
 		i += 1
 		
 
-	print(total_tagihan)
+	print('Menggunakan While Loop', total_tagihan)
 
 perulanganWhile()
 
@@ -64,3 +64,14 @@ perulanganWhile()
 		#! 	total_tagihan = -1
 		#! 	print('Tagihan tidak ada atau kosong')
 		#! 	break
+
+#* for loop
+def perulanganFor():
+	test_tagihan = [50000 ,75000, 125000, 300000, 200000]
+	# jumlah_tagihan = len(tagihan)
+	totalTagihan = 0
+	for i in test_tagihan:
+		totalTagihan += i
+	print('Menggunakan For Loop', totalTagihan)
+
+perulanganFor()
