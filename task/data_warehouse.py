@@ -46,10 +46,11 @@ def perulanganWhile():
 	i=0
 	jumlah_tagihan = len(tagihan)
 	while i < jumlah_tagihan:
+		#? ini penggunaan continue
 		if tagihan[i] < 0:
-			total_tagihan = -1
-			print('Tagihan tidak ada atau kosong')
-			break
+			i += 1
+			continue
+
 		total_tagihan += tagihan[i]
 		i += 1
 		
@@ -57,3 +58,9 @@ def perulanganWhile():
 	print(total_tagihan)
 
 perulanganWhile()
+
+		#? ini penggunaan break
+		#! if tagihan[i] < 0:
+		#! 	total_tagihan = -1
+		#! 	print('Tagihan tidak ada atau kosong')
+		#! 	break
