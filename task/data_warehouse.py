@@ -79,3 +79,13 @@ def perulanganFor():
 	print('Menggunakan For Loop', totalTagihan)
 
 perulanganFor()
+
+#* Nested For Loop
+def nestedFor():
+	nama_daerah = ['Surabaya', 'Makassar', 'Bali']
+	nama_buah = ['Jeruk', 'Salak', 'Pisang', 'Durian']
+	for i in nama_daerah:
+		for j in nama_buah:
+			print('Nama Daerah', i + 'Nama Buah', j)
+
+nestedFor()
