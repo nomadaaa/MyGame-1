@@ -41,13 +41,18 @@ print('pilihan anda ', choose)
 # total = tagihan[0] + tagihan[1] + tagihan[2] + tagihan[3] +tagihan[4]
 # print(total)
 def perulanganWhile():
-	tagihan = [50000 ,75000, 125000, 300000, 200000]
+	tagihan = [50000 ,75000, 125000, -300000, 200000]
 	total_tagihan = 0
 	i=0
 	jumlah_tagihan = len(tagihan)
 	while i < jumlah_tagihan:
+		if tagihan[i] < 0:
+			total_tagihan = -1
+			print('Tagihan tidak ada atau kosong')
+			break
 		total_tagihan += tagihan[i]
 		i += 1
+		
 
 	print(total_tagihan)
 
