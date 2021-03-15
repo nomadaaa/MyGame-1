@@ -16,3 +16,20 @@ list_makanan = ['Gado-gado', 'Ayam Goreng', 'Rendang']
 list_minuman = ['Es Teh', 'Es Jeruk', 'Es Campur']
 list_menu = list_makanan + list_minuman
 print(list_menu)
+
+#!fitur append
+list_makanan.append('ketoprak')
+
+#!clear
+list_makanan.clear()
+
+#!copy
+list_makanan1 = ['Gado-gado', 'Ayam Goreng', 'Rendang']
+list_makanan2 = list_makanan1.copy()
+list_makanan3 = list_makanan1
+print(list_makanan1, list_makanan2, list_makanan3)
+
+#!count
+score = ['Budi', 'Sud','Budi', 'Sud']
+list_count = score.count('Budi')
+print(list_count)
