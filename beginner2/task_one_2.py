@@ -1,4 +1,5 @@
-bulan = ('januari', 'februari', 'maret', 'april', 'mei', 'juni',
-'juli', 'agustus', 'september', 'oktober', 'november', 'desember'
+bulan = ('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
 )
-print(bulan[-1])
+pertengahan_tahun = bulan[4:9]
+print(pertengahan_tahun)
