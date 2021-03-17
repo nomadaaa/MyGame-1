@@ -1,5 +1,11 @@
 list_menu = ['Gado-gado', 'Ayam Goreng', 'Rendang']
 list_score = ['Budi','Sud','Budi','Budi','Budi','Sud','Sud']
+tuple_score = ('Budi', 'Sud', 'Budi', 'Budi', 'Budi', 'Sud', 'Sud')
+
+#! count
+score = tuple_score.count('Budi')
+print(score)
+
 #! method index
 score_pertama_sud = list_score.index('Sud') 
 
@@ -24,3 +30,4 @@ list_menu.sort()
 #?print
 print(list_score)
 print(list_menu)
+
