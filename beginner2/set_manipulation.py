@@ -16,3 +16,5 @@ print(check)
 #! mengecek apakah set mempunyai elemen yang sama dengan set lainnya
 check_sub = parcel1.issubset(parcel3)
 print(check_sub)
+
+
