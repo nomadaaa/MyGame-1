@@ -16,3 +16,7 @@ isi = info_karyawan1.values()
 #! update
 change = info_karyawan.update({'skillset':['Python', 'PHP']})
 print(change)
+
+tuple_menu = ('Gado-gado','Ayam Goreng','Rendang','Ketoprak')
+jumlah_menu = len(tuple_menu)
+print(jumlah_menu)
