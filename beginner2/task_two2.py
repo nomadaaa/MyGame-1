@@ -9,4 +9,7 @@ info_karyawan2['nik'] = '201621058'
 
 #! keys
 kunci = info_karyawan2.keys()
-print(kunci)
+
+#! values
+isi = info_karyawan1.values()
+print(isi)
