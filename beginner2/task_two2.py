@@ -14,5 +14,5 @@ kunci = info_karyawan2.keys()
 isi = info_karyawan1.values()
 
 #! update
-change = info_karyawan2.update({'skillset':['Python', 'PHP']})
+change = info_karyawan.update({'skillset':['Python', 'PHP']})
 print(change)
