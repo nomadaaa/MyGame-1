@@ -6,4 +6,7 @@ info_karyawan1 = {'nama' : 'Aksara','nik' : '1211011','pekerjaan' : 'Data Analys
 info_karyawan2 = info_karyawan1.copy()
 info_karyawan2['nama'] = 'Cahyo'
 info_karyawan2['nik'] = '201621058'
-print(info_karyawan2)
+
+#! keys
+kunci = info_karyawan2.keys()
+print(kunci)
