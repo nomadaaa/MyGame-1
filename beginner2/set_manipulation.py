@@ -11,3 +11,8 @@ print(parcel3)
 #! suatu set disjoint (saling lepas/tidak mengandung elemen yang sama) dengan set lainnya.
 check = parcel1.isdisjoint(parcel2)
 print(check)
+
+#! issubset()
+#! mengecek apakah set mempunyai elemen yang sama dengan set lainnya
+check_sub = parcel1.issubset(parcel3)
+print(check_sub)
