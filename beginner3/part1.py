@@ -15,4 +15,5 @@ senja = Karyawan()
 #* mengubah isi dari attribut class
 agum.__class__.nama_perusahaan = 'DEF'
 #* mengakases attribut dari class
-print(agum.__class__.nama_perusahaan)
+print('agum', agum.__class__.nama_perusahaan)
+print('senja', senja.__class__.nama_perusahaan)
