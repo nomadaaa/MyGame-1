@@ -35,8 +35,19 @@ class Karyawan:
 	def proyek(self, jumlah):
 		self.jumlah = jumlah
 		self.point = 2.5 * jumlah
-		if self.point == 10:
-			self.insentif_proyek = 1000000
+
+		#* bagaimana jika point ada 50
+		while self.point <= 100:
+			self.point += 10
+			if self.point / 4 == 10:
+				self.insentif_proyek += 1000000
+			else:
+				print('anda harus lebih giat lagi')
+
+		# if self.point == 10:
+		# 	self.insentif_proyek = 1000000
+		
+		#* bonus + insentif proyek
 		self.bonus += self.insentif_proyek
 
 	#* func total
@@ -49,4 +60,4 @@ pegawai1 = Karyawan('Agum', 22, 3000000)
 pegawai1.lembur(6)
 pegawai1.proyek(2)
 # pegawai1.total_pendapatan()
-print(pegawai1.total_pendapatan())
+print(pegawai1.proyek(4))
