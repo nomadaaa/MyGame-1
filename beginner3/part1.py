@@ -29,6 +29,13 @@ class Karyawan:
 	def lembur(self):
 		self.pendapatan_tambahan += self.insentif_lembur
 
+	#* membuat func proyek
+	#* pendaptan tambahan ditambah dengan parameter insentif proyek
+	def proyek(self, insentif_proyek):
+		self.pendapatan_tambahan += insentif_proyek 
+
+	
+
 	# pass
 
 #* ini merupakan contoh objek dari class karyawan
@@ -44,3 +51,9 @@ agum.__class__.nama_perusahaan = 'DEF'
 #* mengakases attribut dari class
 print('agum', agum.__class__.nama_perusahaan)
 print('senja', senja.__class__.nama_perusahaan)
+
+
+#* mengakses func lembur dari class
+imran = Karyawan('Imran', 20, 1200000)
+
+print(imran.lembur())
