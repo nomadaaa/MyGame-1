@@ -15,15 +15,20 @@ class Karyawan:
 		self.nama = nama
 		self.gaji = gaji
 		self.umur = umur
+		#* mengecek umur 
+		#* jika umur lebih dari 30 maka ditambah 1500000
+		if umur > 30:
+			self.gaji += 1500000
 
 	# pass
 
 #* ini merupakan contoh objek dari class karyawan
 agum = Karyawan('Agum', 20, 10000000)
-senja = Karyawan('Senja', 30, 2100000)
+senja = Karyawan('Senja', 35, 2100000)
 
 #* mengakses objek 
-print(agum.nama + 'pendapatan' + str(agum.gaji) + 'Usia' + str(agum.umur))
+print(agum.nama + ' pendapatan ' + str(agum.gaji) + ' Usia ' + str(agum.umur))
+print(senja.nama + ' pendapatan ' + str(senja.gaji) + ' Usia ' + str(senja.umur))
 
 #* mengubah isi dari attribut class
 agum.__class__.nama_perusahaan = 'DEF'
