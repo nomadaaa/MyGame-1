@@ -6,6 +6,8 @@ keuangan = {
 total_pengeluaran = 0
 total_pemasukan = 0
 
+#check a picture
+
 for biaya in keuangan['pengeluaran']:
 	total_pengeluaran += biaya
 for biaya in keuangan['pemasukan']:

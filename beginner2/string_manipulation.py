@@ -7,6 +7,7 @@ print(nama_produk[:6])
 print(nama_produk[7:])
 print(len(nama_produk))
 
+#*dsfdddddddsddds
 paragrap = 'ini adalah paragrap pertama yang dibuat'
 paragrap = paragrap[:0] + 'I' + paragrap[11:19] + 'P'
 print(paragrap)
