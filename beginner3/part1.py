@@ -20,8 +20,10 @@ class Karyawan:
 
 #* ini merupakan contoh objek dari class karyawan
 agum = Karyawan('Agum', 20, 10000000)
-senja = Karyawan()
+senja = Karyawan('Senja', 30, 2100000)
 
+#* mengakses objek 
+print(agum.nama + 'pendapatan' + str(agum.gaji) + 'Usia' + str(agum.umur))
 
 #* mengubah isi dari attribut class
 agum.__class__.nama_perusahaan = 'DEF'
