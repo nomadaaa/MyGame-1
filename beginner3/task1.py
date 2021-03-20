@@ -3,7 +3,6 @@
 #* membuat class
 class Karyawan:
 	insentif_proyek = 0
-	point = 0
 
 	#* func init
 	def __init__(self, nama, usia, pendapatan, insentif_lembur=0):
@@ -11,6 +10,7 @@ class Karyawan:
 		self.usia = usia
 		self.pendapatan = pendapatan
 		self.insentif_lembur = insentif_lembur
+		self.point = 0
 
 	#* membuat fungsi lembur
 	#* kita check berapa jam pegawai lembur
@@ -32,10 +32,9 @@ class Karyawan:
 	def proyek(self, jumlah):
 		self.jumlah = jumlah
 		self.point = 2.5 * jumlah
-		if point == 10:
+		if self.point == 10:
 			self.insentif_proyek = 1000000
-		else:
-			self.insentif_proyek = 0
+			return self.insentif_proyek
 
 	#* func total
 	#* menambah insentif lembur dan pendapatan 
