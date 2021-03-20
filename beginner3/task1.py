@@ -23,7 +23,13 @@ class Karyawan:
 		else:
 			self.insentif_lembur += 250000
 
+	#* func total
+	#* menambah insentif lembur dan pendapatan 
+	def total_pendapatan(self):
+		return self.pendapatan + self.insentif_lembur
+
 #* execute program
 pegawai1 = Karyawan('Agum', 22, 3000000)
-pegawai1.lembur()
-print(pegawai1.nama)
+pegawai1.lembur(6)
+# pegawai1.total_pendapatan()
+print(pegawai1.total_pendapatan())
