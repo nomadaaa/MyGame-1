@@ -5,6 +5,8 @@
 class Karyawan:
 	#* salah satu penggunaan class attribut
 	nama_perusahaan = 'ABC'
+	insentif_lembur = 1500000
+
 	#* didalam sebuah class biasanya terdapat sebuah constructor
 	#* constructor di python disebut __init__()
 	#* fungsi cons yaitu kita bisa menginisialisasi attribut milik objek
@@ -15,10 +17,17 @@ class Karyawan:
 		self.nama = nama
 		self.gaji = gaji
 		self.umur = umur
+		self.pendapatan_tambahan = 0
 		#* mengecek umur 
 		#* jika umur lebih dari 30 maka ditambah 1500000
 		if umur > 30:
 			self.gaji += 1500000
+
+	#* didalam class kita juga bisa menambahkan fungsi
+	#* contoh
+	#* fungsi lembur
+	def lembur(self):
+		self.pendapatan_tambahan += self.insentif_lembur
 
 	# pass
 
