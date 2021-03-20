@@ -36,8 +36,7 @@ class Karyawan:
 
 	#* menambahkan pendapatan proyek dan lembur
 	def pendapatanBersih(self):
-		total = lembur() + proyek()
-		self.pendapatan += total
+		return self.pendapatan + self.pendapatan_tambahan
 
 	# pass
 
@@ -58,5 +57,6 @@ print('senja', senja.__class__.nama_perusahaan)
 
 #* mengakses func lembur dari class
 imran = Karyawan('Imran', 20, 1200000)
+imran.lembur()
 
-print(imran.proyek(12000323))
+print('total gaji imran' + str(imran.pendapatanBersih()))
