@@ -85,3 +85,11 @@ perusahaan1 = Perusahaan('Unilever', 'Jakarta', '02141158')
 print(perusahaan1.aktifkan_karyawan('karyawan'))
 print(perusahaan1.nama)
 
+#* deklarasi objek perusahaan dan karyawan
+nama_perusahaan = Perusahaan('Compus Tech', 'Jakarta', '021111221')
+ani = Karyawan('Ani', 22, 200234244)
+ani.lembur(6)
+ani.proyek(4)
+print(ani.total_pendapatan())
+
+
