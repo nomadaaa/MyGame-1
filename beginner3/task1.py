@@ -71,6 +71,14 @@ class Perusahaan:
 	def aktifkan_karyawan(self, karyawan):
 		self.list_karyawan.append(karyawan)
 
+	def nonaktifkan_karyawan(self, nama_karyawan):
+		karyawan_nonaktif = None
+		for karyawan in self.list_karyawan:
+			if karyawan.nama == nama_karyawan:
+				karyawan_nonaktif = karyawan
+				break
+			if karyawan.nama is not None:
+				self.list_karyawan.remove(karyawan_nonaktif)
 	
 
 perusahaan1 = Perusahaan('Unilever', 'Jakarta', '02141158')
