@@ -54,3 +54,26 @@ pegawai1.lembur(2)
 pegawai1.proyek(4)
 print(pegawai1.total_pendapatan())
 # print(pegawai1.proyek(3))
+
+#* membuat class perusahaan 
+#* berisi nama, alamat, nomor_tlp
+class Perusahaan:
+	def __init__(self, nama, alamat, nomot_tlp):
+		self.nama = nama
+		self.alamat = alamat
+		self.nomor_tlp = nomot_tlp
+		self.list_karyawan = []
+
+	def karyawan(self, status):
+		self.nama 
+		self.status = status
+	
+	def aktifkan_karyawan(self, karyawan):
+		self.list_karyawan.append(karyawan)
+
+	
+
+perusahaan1 = Perusahaan('Unilever', 'Jakarta', '02141158')
+print(perusahaan1.aktifkan_karyawan('karyawan'))
+print(perusahaan1.nama)
+
